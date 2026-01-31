@@ -15,7 +15,7 @@
 - 🛠 Always creating, thinking, and building new projects
 - 🧠 Debugging + Coffee = Lock-in Mode Activated™
 - 🎮 Outside of tech, I unwind by playing PC games
-- 🎯 Goal: Become a full-stack AI-focused developer
+- 🎯 Goal: Become a full-stack AI-focused developer 
 
 ---
 
