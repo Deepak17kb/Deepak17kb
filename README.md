@@ -55,9 +55,9 @@
 <br/>
 
 - DAA (Design & Analysis of Algorithms)
+- DSA (Data Structures & Algorithms (DSA))
+- Data Analysis
 - Java
-- React.js
-- Node.js
 
 <br/>
 
