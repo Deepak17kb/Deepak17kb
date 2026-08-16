@@ -38,7 +38,9 @@
 
 <h2 align="center"><i>About</i></h2>
 
-<p align="center">Second-year CSE student on the data science track, drawn to where computation meets intelligence.</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=Second-year+CSE+student+on+the+data+science+track" alt="About subtitle"/>
+</p>
 
 <br/>
 
@@ -57,7 +59,9 @@ Working toward becoming a full stack engineer fluent in AI-native systems
 
 <h2 align="center"><i>Currently Learning</i></h2>
 
-<p align="center">A few things in progress at once, as always.</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=A+few+things+in+progress+at+once%2C+as+always" alt="Learning subtitle"/>
+</p>
 
 <br/>
 
@@ -80,7 +84,9 @@ Working toward becoming a full stack engineer fluent in AI-native systems
 
 <h2 align="center"><i>Toolkit</i></h2>
 
-<p align="center">The instruments, sharpened through repetition.</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=The+instruments%2C+sharpened+through+repetition" alt="Toolkit subtitle"/>
+</p>
 
 <br/>
 
@@ -107,13 +113,41 @@ Working toward becoming a full stack engineer fluent in AI-native systems
 
 <br/>
 
+<p align="center"><i>Data & Machine Learning</i></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Pandas-05050A?style=for-the-badge&logo=pandas&logoColor=00FFF2"/>
+  <img src="https://img.shields.io/badge/NumPy-05050A?style=for-the-badge&logo=numpy&logoColor=00FFF2"/>
+  <img src="https://img.shields.io/badge/scikit--learn-05050A?style=for-the-badge&logo=scikitlearn&logoColor=00FFF2"/>
+</p>
+
+<p align="center"><i>Deep Learning</i></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-05050A?style=for-the-badge&logo=pytorch&logoColor=B199FF"/>
+  <img src="https://img.shields.io/badge/TensorFlow-05050A?style=for-the-badge&logo=tensorflow&logoColor=B199FF"/>
+  <img src="https://img.shields.io/badge/Keras-05050A?style=for-the-badge&logo=keras&logoColor=B199FF"/>
+</p>
+
+<p align="center"><i>Data Visualization</i></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Tableau-05050A?style=for-the-badge&logo=tableau&logoColor=00FFF2"/>
+  <img src="https://img.shields.io/badge/Power%20BI-05050A?style=for-the-badge&logo=powerbi&logoColor=00FFF2"/>
+  <img src="https://img.shields.io/badge/Matplotlib-05050A?style=for-the-badge&logo=python&logoColor=00FFF2"/>
+</p>
+
+<br/>
+
 ---
 
 <br/>
 
 <h2 align="center"><i>Metrics</i></h2>
 
-<p align="center">A quiet record of the work.</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=A+quiet+record+of+the+work" alt="Metrics subtitle"/>
+</p>
 
 <br/>
 
@@ -132,13 +166,41 @@ Working toward becoming a full stack engineer fluent in AI-native systems
 
 <br/>
 
+<h2 align="center"><i>Featured Projects</i></h2>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=A+few+things+worth+a+closer+look" alt="Featured projects subtitle"/>
+</p>
+
+<br/>
+
+<p align="center">
+  <a href="https://github.com/Deepak17kb/KrishiMitra" target="_blank">
+    <img src="https://img.shields.io/badge/KrishiMitra-05050A?style=for-the-badge&logo=github&logoColor=00FFF2"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/Deepak17kb/AgriFlow" target="_blank">
+    <img src="https://img.shields.io/badge/AgriFlow-05050A?style=for-the-badge&logo=github&logoColor=B199FF"/>
+  </a>
+</p>
+
+<br/>
+
+---
+
+<br/>
+
 <h2 align="center"><i>Contribution Map</i></h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Deepak17kb/Deepak17kb/output/github-contribution-grid-snake-dark.svg" width="95%"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=A+year+of+commits%2C+in+one+view" alt="Contribution subtitle"/>
 </p>
 
-<p align="center"><i>Animates once the workflow below is set up.</i></p>
+<br/>
+
+<p align="center">
+  <img src="https://ghchart.rshah.org/00FFF2/Deepak17kb" width="95%"/>
+</p>
 
 <br/>
 
@@ -172,7 +234,9 @@ Artificial Intelligence &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Full Stack Deve
 
 <h2 align="center"><i>Get in Touch</i></h2>
 
-<p align="center">Open to conversations about code, ideas, or anything worth exploring.</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&size=14&duration=2800&pause=1000&color=6A6A80&center=true&vCenter=true&width=700&height=24&lines=Open+to+conversations+about+code%2C+ideas%2C+or+anything+worth+exploring" alt="Contact subtitle"/>
+</p>
 
 <br/>
 
