@@ -16,7 +16,7 @@
 
 <img src="assets/sections/about.svg" width="100%" alt="01 · About"/>
 
-<img src="assets/about.svg" width="100%" alt="Terminal session. whoami: Deepak, CSE undergraduate on the data science track. Focus: full-stack development with AI layered in; always mid-project; goal: a full-stack engineer fluent in AI-native systems. Learning: design and analysis of algorithms, data structures, data analysis, Java. Interests: AI, automation, voice tech, ML apps, open source, cloud, UI. Offline: strategy games."/>
+<img src="assets/about.svg" width="100%" alt="About: Full-stack development with AI layered in is where I do my best work. Always mid-project, always learning something new. Working toward becoming a full-stack engineer fluent in AI-native systems. Based in Jalandhar, Punjab, India; studying CSE on the data science track; currently learning algorithms, data structures, data analysis and Java; away from the screen, strategy games."/>
 
 <br/><br/>
 
@@ -27,13 +27,14 @@
 <a href="https://github.com/Deepak17kb/AgriFlow"><img src="assets/projects/agriflow.svg" width="49%" alt="AgriFlow AI: crop and food-security analytics with a RandomForest outlook"/></a>
 <a href="https://github.com/Deepak17kb/KrishiMitra"><img src="assets/projects/krishimitra.svg" width="49%" alt="KrishiMitra: AI farming companion in Hindi and English"/></a>
 <a href="https://github.com/Deepak17kb/Automated-Deadlock-Detection-Tool"><img src="assets/projects/deadlock-lab.svg" width="49%" alt="Deadlock Runtime Lab: a runnable resource-allocation graph with deadlock detection"/></a>
-<a href="https://github.com/Deepak17kb/Global-Jobs-Hiring-Analytics"><img src="assets/projects/hiring-analytics.svg" width="49%" alt="Hiring Analytics: Power BI dashboard on global hiring trends"/></a>
+<a href="https://github.com/adityashukla2615/upi-risk-desk"><img src="assets/projects/upi-risk-desk.svg" width="49%" alt="UPI Risk Desk, a team collaboration: fraud-ring detection and merchant risk analytics for UPI payments"/></a>
 
 <sub>Cards open the repository · live demos:
 <a href="https://deepak17kb.github.io/BroadBridge/">BroadBridge</a> ·
 <a href="https://ner-safe-route-psi.vercel.app">NER SafeRoute</a> ·
 <a href="https://agriflowai.streamlit.app">AgriFlow AI</a> ·
-<a href="https://deepak17kb.github.io/Automated-Deadlock-Detection-Tool/">Deadlock Runtime Lab</a></sub>
+<a href="https://deepak17kb.github.io/Automated-Deadlock-Detection-Tool/">Deadlock Runtime Lab</a> ·
+<a href="https://adityashukla2615.github.io/upi-risk-desk/outputs/upi_risk_desk.html?v=2">UPI Risk Desk</a></sub>
 
 </div>
 
@@ -43,6 +44,7 @@
 
 | Project | What it does | Built with |
 |:--|:--|:--|
+| [Hiring Analytics](https://github.com/Deepak17kb/Global-Jobs-Hiring-Analytics) | Power BI dashboard on global hiring trends, salaries and workforce insights | Power BI |
 | [Gesture Rex](https://github.com/Deepak17kb/Rex-Gesture-Game) | Plays the Chrome dino game from hand gestures seen by a webcam | Python · MediaPipe |
 | [Voice assistant](https://github.com/Deepak17kb/Speech-Reco-Model) | Listens through the microphone, recognises speech and answers aloud | Python |
 | [Movie dataset EDA](https://github.com/Deepak17kb/Movie-Dataset-Exploratory-Data-Analysis-EDA-) | Genres, ratings, budgets and profitability, explored visually | Python · Jupyter |
@@ -83,7 +85,7 @@
 
 <img src="assets/sections/connect.svg" width="100%" alt="05 · Connect"/>
 
-<a href="https://www.linkedin.com/in/deepak-kumar-behera-"><img src="assets/connect/linkedin.svg" width="44%" alt="LinkedIn: in/deepak-kumar-behera-"/></a>
+<a href="https://www.linkedin.com/in/deepak-kumarbehera/"><img src="assets/connect/linkedin.svg" width="44%" alt="LinkedIn: in/deepak-kumarbehera"/></a>
 <a href="https://github.com/Deepak17kb"><img src="assets/connect/github.svg" width="44%" alt="Follow on GitHub: @Deepak17kb"/></a>
 
 <br/><br/>

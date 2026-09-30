@@ -31,38 +31,27 @@ ROLES = [
 
 CHIPS = [("pin", "Jalandhar, Punjab"), ("spark", "Data science track"), ("dot", "Status: active")]
 
-PROMPT = [("deepak", SAND), ("@", MUTED), ("punjab", STONE), (" ~ ", SLATE), ("$ ", SUB)]
-SESSION = [
-    ("cmd", "whoami"),
-    ("out", [("Deepak", TEXT), (" · CSE undergrad · data science track", SUB)]),
-    ("cmd", "cat focus.md"),
-    ("out", [("▸ ", SAND), ("full-stack development with AI layered in", SUB)]),
-    ("out", [("▸ ", SAND), ("always mid-project, always learning alongside it", SUB)]),
-    ("out", [("▸ ", SAND), ("goal: a full-stack engineer fluent in AI-native systems", SUB)]),
-    ("cmd", "ls ~/learning"),
-    ("out", [("design-analysis-of-algorithms/", SLATE), ("  data-structures/", SLATE),
-             ("  data-analysis/", SLATE), ("  java/", SLATE)]),
-    ("cmd", "cat interests.txt"),
-    ("out", [("AI · automation · voice tech · ML apps · open source · cloud · UI", SUB)]),
-    ("cmd", "echo $OFFLINE_MODE"),
-    ("out", [("strategy games", TEXT)]),
-    ("cmd", ""),
+# The statement is set by hand, one line at a time, as (text, highlighted) runs.
+STATEMENT = [
+    [("Full-stack development with ", False), ("AI", True)],
+    [("layered in", True), (" is where I do my", False)],
+    [("best work. Always mid-project,", False)],
+    [("always ", False), ("learning", True), (" something new.", False)],
 ]
-FACTS = [
-    ("role", "CSE undergraduate"),
-    ("track", "data science"),
-    ("builds", "full-stack × AI"),
-    ("stack", "Python · JS/TS · C++ · SQL"),
-    ("based", "Jalandhar, Punjab, IN"),
-    ("status", "active"),
-    ("mode", "learning, always"),
+AMBITION = "Working toward becoming a full-stack engineer fluent in AI-native systems."
+PROFILE = [
+    ("Based in", "Jalandhar, Punjab, India"),
+    ("Studying", "CSE, on the data science track"),
+    ("Currently learning", ["Algorithms", "Data structures", "Data analysis", "Java"]),
+    ("Interests", "AI · automation · voice tech · open source · cloud"),
+    ("Away from the screen", "Strategy games"),
 ]
 
 SECTIONS = [
-    ("about", "01", "About", "whoami"),
+    ("about", "01", "About", "who I am"),
     ("work", "02", "Featured work", "selected builds · click a card"),
     ("toolkit", "03", "Toolkit", "languages · frameworks · data"),
-    ("activity", "04", "GitHub activity", "rebuilt by github actions"),
+    ("activity", "04", "GitHub activity", "updated automatically"),
     ("connect", "05", "Connect", "say hello"),
 ]
 
@@ -87,14 +76,14 @@ PROJECTS = [
          viz="cycle", live=True, tags=["React 19", "Vite", "Express 5", "SQLite"],
          blurb="A resource-allocation graph you can run: a deterministic scheduler "
                "exposes contention and DFS finds the deadlock."),
-    dict(slug="hiring-analytics", title="Hiring Analytics", label="BUSINESS INTELLIGENCE", accent=LILAC, icon="bars",
-         viz="dash", live=False, tags=["Power BI", "Dashboards", "Workforce data"],
-         blurb="Power BI dashboard on global hiring trends, salaries and workforce "
-               "insights, built on real-world datasets."),
+    dict(slug="upi-risk-desk", title="UPI Risk Desk", label="TEAM COLLABORATION · RISK", accent=LILAC, icon="shield",
+         viz="ring", team=["A", "I", "P", "D"], tags=["Python", "pandas", "NetworkX", "ECharts"],
+         blurb="Fraud-ring detection and merchant risk analytics for UPI "
+               "payments, with a team of AI risk agents."),
 ]
 
 LINKS = [
-    ("linkedin", "user", "LinkedIn", "in/deepak-kumar-behera-", SLATE),
+    ("linkedin", "user", "LinkedIn", "in/deepak-kumarbehera", SLATE),
     ("github", "branch", "Follow on GitHub", "@Deepak17kb", SAND),
 ]
 
@@ -128,7 +117,7 @@ def icon_path(name: str) -> str:
         "chat": "M-8,-8H8A3,3 0 0 1 11,-5V2A3,3 0 0 1 8,5H-1L-6,9V5H-8A3,3 0 0 1 -11,2V-5A3,3 0 0 1 -8,-8Z"
                 "M-5,-1.5H-4.5M0,-1.5H0.5M5,-1.5H5.5",
         "lock": "M-8,-1H8V10H-8ZM-4.5,-1V-4.5A4.5,4.5 0 0 1 4.5,-4.5V-1M0,3.5V6",
-        "bars": "M-10,9H10M-6,9V2M-1,9V-3M4,9V-8",
+        "shield": "M0,-10L8,-7V0C8,5 4.5,8.5 0,10C-4.5,8.5 -8,5 -8,0V-7ZM-3.5,0L-1,2.5L3.5,-2",
         "user": "M0,-2A4.5,4.5 0 1 0 0,-11A4.5,4.5 0 1 0 0,-2ZM-9,10C-9,4 -5,1 0,1C5,1 9,4 9,10",
         "branch": "M-5,-4.4V5.4M6,-0.4C6,4 -5,2 -5,5.4M-2.4,-7A2.6,2.6 0 1 1 -7.6,-7A2.6,2.6 0 1 1 -2.4,-7"
                   "M-2.4,8A2.6,2.6 0 1 1 -7.6,8A2.6,2.6 0 1 1 -2.4,8M8.6,-3A2.6,2.6 0 1 1 3.4,-3A2.6,2.6 0 1 1 8.6,-3",
@@ -274,111 +263,58 @@ def hero() -> str:
     return document(W, H, "".join(out), label="Deepak: Data & AI, full stack. Jalandhar, Punjab.", css=css, defs=defs)
 
 
-# ── terminal ───────────────────────────────────────────────────────────────
-def terminal() -> str:
-    W, H = 1200, 492
-    fs, lh = 16, 29
-    cw = fs * MONO_W
-    x0, y0, split = 32, 90, 824
-    defs, back, border = frame(W, H, 18, "term")
-    prompt_len = sum(len(t) for t, _ in PROMPT)
+# ── about ──────────────────────────────────────────────────────────────────
+def about_card() -> str:
+    W, H = 1200, 430
+    defs, back, border = frame(W, H, 22, "about")
+    css = RISE + (
+        ".breathe{animation:breathe 9s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}"
+        ".pill{transform-box:fill-box;transform-origin:center;animation:pill .7s cubic-bezier(.3,1.4,.5,1) both}"
+        "@keyframes pill{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}"
+    )
+    defs += (f'<radialGradient id="about-glow" cx=".12" cy=".9" r=".6"><stop offset="0" stop-color="{SAND}"'
+             f' stop-opacity=".09"/><stop offset="1" stop-color="{SAND}" stop-opacity="0"/></radialGradient>')
+    out = [back, '<g clip-path="url(#about-clip)">',
+           f'<rect width="{W}" height="{H}" fill="url(#about-glow)" class="breathe"/>',
+           f'<text x="50" y="143" font-family="{SERIF}" font-size="150" fill="{SAND}" fill-opacity=".16"'
+           ' class="rise">“</text>']
 
-    def segments(x, y, parts):
-        col, svg = 0, []
-        for text, color in parts:
-            svg.append(mono(x + col * cw, y, text, fs, color))
-            col += len(text)
-        return "".join(svg)
+    # Left: the statement, in the serif, with a few words picked out.
+    for i, runs in enumerate(STATEMENT):
+        spans = "".join(f'<tspan fill="{SAND}" font-style="italic">{esc(t)}</tspan>' if lit else esc(t)
+                        for t, lit in runs)
+        out.append(f'<g class="rise" style="animation-delay:{num(0.2 + i * 0.16)}s">'
+                   f'<text x="72" y="{132 + i * 46}" font-family="{SERIF}" font-size="33" fill="{TEXT}"'
+                   f' xml:space="preserve">{spans}</text></g>')
+    out.append(f'<g class="rise" style="animation-delay:.95s">{sans(72, 318, AMBITION, 15.5, SUB)}</g>')
+    out.append(f'<g class="rise" style="animation-delay:1.3s"><text x="72" y="376" font-family="{SERIF}" font-size="24"'
+               f' font-style="italic" fill="{SAND}">— Deepak</text></g>')
 
-    # Build the timeline first, then emit each line with its own reveal.
-    t, lines, cursor, typing = 0.9, [], [], []
-    for idx, (kind, content) in enumerate(SESSION):
-        y = y0 + idx * lh
-        lines.append((idx, kind, content, y, t))
-        if kind == "cmd":
-            xc = x0 + prompt_len * cw
-            cursor.append((t, xc, y))
-            t += 0.45
-            steps = [(t + k * 0.06, (k + 1) * cw) for k in range(len(content))]
-            typing.append(steps)
-            cursor += [(s, xc + w, y) for s, w in steps]
-            t += len(content) * 0.06 + 0.35
+    # Right: a short profile sheet, separated by hairlines.
+    out.append(f'<path d="M700,70V372" pathLength="1" class="rule" stroke="{LINE}" style="animation-delay:.3s"/>')
+    rx, ry, step = 740, 74, 66
+    for i, (label, value) in enumerate(PROFILE):
+        y, delay = ry + i * step, 0.4 + i * 0.12
+        row = [mono(rx, y, label.upper(), 10.5, MUTED, track=1.6)]
+        if isinstance(value, list):
+            x = rx
+            for j, item in enumerate(value):
+                w = mono_width(item, 11) + 20
+                row.append(f'<g class="pill" style="animation-delay:{num(delay + 0.3 + j * 0.08)}s">'
+                           f'<rect x="{num(x)}" y="{y + 10}" width="{num(w)}" height="24" rx="12" fill="{INSET}"'
+                           f' stroke="{LINE}"/>{mono(x + 10, y + 26, item, 11, TEXT)}</g>')
+                x += w + 8
         else:
-            typing.append(None)
-            t += 0.14
-            if idx + 1 < len(SESSION) and SESSION[idx + 1][0] == "cmd":
-                t += 0.4
-    total = t + 0.2
+            row.append(sans(rx, y + 27, value, 16, TEXT, weight=500))
+        out.append(f'<g class="rise" style="animation-delay:{num(delay)}s">{"".join(row)}</g>')
+        if i < len(PROFILE) - 1:
+            out.append(f'<path d="M{rx},{y + 45}H{W - 64}" pathLength="1" class="rule" stroke="{LINE}"'
+                       f' style="animation-delay:{num(delay + 0.1)}s"/>')
 
-    body = []
-    for (idx, kind, content, y, start), steps in zip(lines, typing):
-        reveal = discrete("opacity", [(0, 0), (start, 1)], total)
-        if kind == "out":
-            body.append(f"<g>{reveal}{segments(x0, y, content)}</g>")
-            continue
-        body.append(f"<g>{reveal}{segments(x0, y, PROMPT)}</g>")
-        if content:
-            xc = x0 + prompt_len * cw
-            full = num(len(content) * cw + 1)
-            frames = [(0, 0)] + [(s, num(w + 1)) for s, w in steps]
-            body.append(
-                f'<clipPath id="type-{idx}"><rect x="{num(xc - 1)}" y="{y - fs - 4}" width="{full}" height="{lh}">'
-                f'{discrete("width", frames, total)}</rect></clipPath>'
-                f'<g clip-path="url(#type-{idx})">{mono(xc, y, content, fs, TEXT)}</g>'
-            )
-    _, cx_end, cy_end = cursor[-1]
-    body.append(
-        f'<rect x="{num(cx_end)}" y="{num(cy_end - fs * 0.92)}" width="{num(cw)}" height="{num(fs * 1.22)}"'
-        f' fill="{STONE}" opacity=".8" class="blink">'
-        + discrete("x", [(0, num(cursor[0][1]))] + [(s, num(x)) for s, x, _ in cursor], total)
-        + discrete("y", [(0, num(cursor[0][2] - fs * 0.92))] + [(s, num(y - fs * 0.92)) for s, _, y in cursor], total)
-        + "</rect>"
-    )
-
-    # Right pane: a neofetch-style card.
-    fx, fy = split + 32, 92
-    side = [mono(fx, fy, "deepak", 15, SAND, weight=700) + mono(fx + 6 * 9, fy, "@", 15, MUTED)
-            + mono(fx + 7 * 9, fy, "punjab", 15, STONE, weight=700),
-            mono(fx, fy + 20, "─" * 22, 13, LINE)]
-    for i, (key, value) in enumerate(FACTS):
-        y = fy + 52 + i * 27
-        side.append(mono(fx, y, key, 14, MUTED) + mono(fx + 9 * 8.4, y, value, 14, TEXT))
-        if key == "status":
-            dot_x = fx + 9 * 8.4 + mono_width(value, 14) + 12
-            side.append(f'<circle cx="{num(dot_x)}" cy="{y - 5}" r="3.5" fill="{GREEN}" opacity="0" class="ping"/>'
-                        f'<circle cx="{num(dot_x)}" cy="{y - 5}" r="3.5" fill="{GREEN}"/>')
-    palette = (SAND, SAGE, SLATE, LILAC, ROSE, CLAY, STONE, MUTED)
-    py = fy + 52 + len(FACTS) * 27 + 6
-    for i, color in enumerate(palette):
-        side.append(f'<rect x="{fx + i * 30}" y="{py}" width="24" height="24" rx="5" fill="{color}"/>')
-    side.append(mono(fx, py + 60, "uptime: always building", 13, MUTED))
-
-    bar_y = H - 30
-    status = (
-        f'<rect x="0" y="{bar_y}" width="{W}" height="30" fill="#141417"/>'
-        f'<path d="M0,{bar_y}H{W}" stroke="{LINE}"/>'
-        f'<rect x="0" y="{bar_y}" width="128" height="30" fill="#232326"/>'
-        + mono(18, bar_y + 20, "deepak17kb", 12, SAND, weight=700)
-        + mono(146, bar_y + 20, "0:zsh*", 12, TEXT) + mono(210, bar_y + 20, "1:ml", 12, MUTED)
-        + mono(258, bar_y + 20, "2:web", 12, MUTED)
-        + mono(W - 20, bar_y + 20, "Jalandhar, IN · UTC+5:30", 12, MUTED, anchor="end")
-    )
-    title_bar = (
-        f'<rect width="{W}" height="44" fill="#141417"/><path d="M0,44H{W}" stroke="{LINE}"/>'
-        + "".join(f'<circle cx="{26 + i * 20}" cy="22" r="6" fill="#3F3F46"/>' for i in range(3))
-        + mono(600, 27, "deepak@punjab: ~/about — tmux", 13, MUTED, anchor="middle")
-    )
-    out = (
-        back + '<g clip-path="url(#term-clip)">' + title_bar
-        + f'<path d="M{split},44V{bar_y}" stroke="{LINE}"/>'
-        + "".join(body)
-        + '<g class="rise" style="animation-delay:.4s">' + "".join(side) + "</g>"
-        + status + "</g>" + border
-    )
-    label = ("Terminal: whoami — Deepak, CSE undergraduate on the data science track. "
-             "Focus: full-stack development with AI layered in. Learning: design and analysis of algorithms, "
-             "data structures, data analysis, Java. Offline: strategy games.")
-    return document(W, H, out, label=label, css=RISE, defs=defs)
+    out.append("</g>" + border)
+    label = (f"About: {' '.join(t for runs in STATEMENT for t, _ in runs)} {AMBITION} "
+             + "; ".join(f"{k}: {', '.join(v) if isinstance(v, list) else v}" for k, v in PROFILE) + ".")
+    return document(W, H, "".join(out), label=label, css=css, defs=defs)
 
 
 # ── section bars ───────────────────────────────────────────────────────────
@@ -563,34 +499,37 @@ def viz_cycle(a, rnd):
     return "".join(svg)
 
 
-def viz_dash(a, rnd):
-    css = ("<style>.donut{transform-box:fill-box;transform-origin:center;animation:donut 8s cubic-bezier(.3,.7,.2,1) infinite both}"
-           "@keyframes donut{0%{transform:rotate(-120deg);opacity:0}22%,88%{transform:none;opacity:1}100%{opacity:0}}"
-           "</style>")
-    seg, acc = [], 0
-    for share, color in ((46, a), (30, SLATE), (24, STONE)):
-        seg.append(f'<circle cx="36" cy="36" r="21" fill="none" stroke="{color}" stroke-width="8" pathLength="100"'
-                   f' stroke-dasharray="{share - 2} {102 - share}" stroke-dashoffset="{-acc}" transform="rotate(-90 36 36)"/>')
-        acc += share
-    svg = [css, f'<g class="donut"><circle cx="36" cy="36" r="21" fill="none" stroke="{LINE}" stroke-width="8"/>{"".join(seg)}</g>',
-           mono(82, 11, "salary distribution", 8.5, MUTED), mono(252, 11, "hiring trend", 8.5, MUTED),
-           f'<path d="M80,62.5H232M250,62.5H386" stroke="{LINE}"/>']
-    for i in range(11):
-        h = 40 * math.exp(-((i - 4) ** 2) / (2 * 2.3 ** 2)) + 4
-        svg.append(f'<rect x="{82 + i * 14}" y="{num(62 - h)}" width="10" height="{num(h)}" rx="2" fill="{a}"'
-                   f' fill-opacity=".7" class="grow" style="animation-delay:{num(i * 0.05)}s"/>')
-    pts, y = [], 54.0
-    for i in range(12):
-        pts.append((252 + i * 12, y))
-        y = max(20.0, y - rnd.uniform(-1.5, 5.5))
-    area = path_from(pts) + f"L{num(pts[-1][0])},62L252,62Z"
-    svg += [f'<path d="{area}" fill="{a}" fill-opacity=".1" class="fade"/>',
-            f'<path d="{path_from(pts)}" pathLength="1" class="draw" fill="none" stroke="{a}" stroke-width="1.8"/>',
-            f'<circle cx="{num(pts[-1][0])}" cy="{num(pts[-1][1])}" r="3" fill="{a}" class="pop"/>']
+def viz_ring(a, rnd):
+    css = (
+        "<style>.rp{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:18 82;"
+        "animation:rp 8s linear infinite both}"
+        "@keyframes rp{0%{stroke-dashoffset:18;opacity:1}6%{stroke-dashoffset:-100;opacity:1}6.1%,100%{opacity:0}}"
+        "</style>"
+    )
+    ring = [(196, 17), (238, 22), (250, 49), (210, 58), (178, 39)]
+    others = [(20, 24), (52, 52), (86, 20), (118, 44), (146, 16), (292, 18), (320, 48), (352, 24), (378, 54), (150, 60)]
+    links = [(0, 1), (1, 2), (2, 3), (3, 4), (3, 9), (4, 1)]
+    bridges = [((118, 44), ring[4]), ((146, 16), ring[0]), (ring[1], (292, 18)), (ring[2], (320, 48))]
+    cycle = [path_from((ring[i], ring[(i + 1) % len(ring)])) for i in range(len(ring))]
+    hull = path_from(ring) + "Z"
+    svg = [css, f'<g stroke="{MUTED}" stroke-opacity=".5">']
+    svg += [f'<path d="{path_from((others[i], others[j]))}"/>' for i, j in links]
+    svg += [f'<path d="{path_from((u, v))}"/>' for u, v in bridges]
+    svg += [f'<path d="{path_from(((292, 18), (320, 48)))}"/><path d="{path_from(((320, 48), (352, 24)))}"/>'
+            f'<path d="{path_from(((352, 24), (378, 54)))}"/>']
+    svg += [f'<path d="{d}"/>' for d in cycle] + ["</g>"]
+    svg += [f'<path d="{d}" pathLength="100" class="rp" stroke="{a}" style="animation-delay:{num(i * 0.48)}s"/>'
+            for i, d in enumerate(cycle)]
+    svg += [f'<circle cx="{x}" cy="{y}" r="3.2" fill="{INSET}" stroke="{SUB}" stroke-width="1.2"/>' for x, y in others]
+    svg += [f'<circle cx="{x}" cy="{y}" r="4" fill="{INSET}" stroke="{a}" stroke-width="1.5"/>' for x, y in ring]
+    svg.append(f'<g class="fade"><path d="{hull}" fill="{RED}" fill-opacity=".1" stroke="{RED}" stroke-width="1.5"'
+               ' stroke-linejoin="round"/>'
+               + "".join(f'<circle cx="{x}" cy="{y}" r="4" fill="{RED}"/>' for x, y in ring)
+               + mono(386, 12, "ring flagged · 5 accounts", 9, RED, anchor="end") + "</g>")
     return "".join(svg)
 
 
-VIZ = {"fan": viz_fan, "route": viz_route, "yield": viz_yield, "chat": viz_chat, "cycle": viz_cycle, "dash": viz_dash}
+VIZ = {"fan": viz_fan, "route": viz_route, "yield": viz_yield, "chat": viz_chat, "cycle": viz_cycle, "ring": viz_ring}
 
 
 def card(p: dict, seed: int) -> str:
@@ -608,13 +547,22 @@ def card(p: dict, seed: int) -> str:
            mono(84, 38, p["label"], 10.5, a),
            sans(84, 61, p["title"], 21, TEXT, weight=600)]
 
-    chip = "LIVE" if p["live"] else "CODE"
-    chip_w = mono_width(chip, 10) + 32
-    cx = W - 24 - chip_w
-    dot = GREEN if p["live"] else MUTED
-    out.append(f'<rect x="{num(cx)}" y="26" width="{num(chip_w)}" height="22" rx="11" fill="{INSET}" stroke="{LINE}"/>'
-               + (f'<circle cx="{num(cx + 12)}" cy="37" r="3" fill="{dot}" opacity="0" class="ping"/>' if p["live"] else "")
-               + f'<circle cx="{num(cx + 12)}" cy="37" r="3" fill="{dot}"/>' + mono(cx + 21, 40.5, chip, 10, SUB))
+    if p.get("team"):
+        members = p["team"]
+        for i, initial in enumerate(members):
+            x = W - 24 - 11 - (len(members) - 1 - i) * 17
+            ring = SAND if i == len(members) - 1 else LINE
+            out.append(f'<circle cx="{x}" cy="37" r="12" fill="{INSET}" stroke="#111113" stroke-width="3"/>'
+                       f'<circle cx="{x}" cy="37" r="11" fill="{INSET}" stroke="{ring}"/>'
+                       + mono(x, 40.5, initial, 10, TEXT if ring == SAND else SUB, anchor="middle"))
+    else:
+        chip = "LIVE" if p["live"] else "CODE"
+        chip_w = mono_width(chip, 10) + 32
+        cx = W - 24 - chip_w
+        dot = GREEN if p["live"] else MUTED
+        out.append(f'<rect x="{num(cx)}" y="26" width="{num(chip_w)}" height="22" rx="11" fill="{INSET}" stroke="{LINE}"/>'
+                   + (f'<circle cx="{num(cx + 12)}" cy="37" r="3" fill="{dot}" opacity="0" class="ping"/>' if p["live"] else "")
+                   + f'<circle cx="{num(cx + 12)}" cy="37" r="3" fill="{dot}"/>' + mono(cx + 21, 40.5, chip, 10, SUB))
 
     viz = VIZ[p["viz"]](a, random.Random(seed))
     out.append(f'<g transform="translate(24,80)"><rect width="392" height="68" rx="10" fill="{INSET}" stroke="{LINE}"/>'
@@ -684,7 +632,7 @@ def footer() -> str:
 
 
 def main() -> None:
-    files = {"hero.svg": hero(), "about.svg": terminal(), "footer.svg": footer()}
+    files = {"hero.svg": hero(), "about.svg": about_card(), "footer.svg": footer()}
     files |= {f"sections/{slug}.svg": section(i, title, cap) for slug, i, title, cap in SECTIONS}
     files |= {f"projects/{p['slug']}.svg": card(p, seed) for seed, p in enumerate(PROJECTS)}
     files |= {f"connect/{slug}.svg": button(icon, title, sub, a) for slug, icon, title, sub, a in LINKS}

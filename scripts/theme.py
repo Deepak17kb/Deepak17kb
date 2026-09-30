@@ -53,14 +53,18 @@ def mono_width(text: str, size: float) -> float:
     return len(text) * MONO_W * size
 
 
-def mono(x, y, text, size, fill, *, anchor="start", weight=None, cls=None, attrs=""):
-    """Monospace text pinned to an exact width, so layouts do not depend on the font."""
+def mono(x, y, text, size, fill, *, anchor="start", weight=None, cls=None, attrs="", track=0.0):
+    """Monospace text pinned to an exact width, so layouts do not depend on the font.
+
+    `track` adds letter-spacing, in px, between glyphs.
+    """
     extra = f' font-weight="{weight}"' if weight else ""
     extra += f' class="{cls}"' if cls else ""
     extra += f' text-anchor="{anchor}"' if anchor != "start" else ""
     return (
         f'<text x="{num(x)}" y="{num(y)}" font-family="{MONO}" font-size="{num(size)}" fill="{fill}"'
-        f' textLength="{num(mono_width(text, size))}" lengthAdjust="spacing" xml:space="preserve"'
+        f' textLength="{num(mono_width(text, size) + track * (len(text) - 1))}" lengthAdjust="spacing"'
+        ' xml:space="preserve"'
         f"{extra}{attrs}>{esc(text)}</text>"
     )
 
