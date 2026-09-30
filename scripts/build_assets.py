@@ -39,7 +39,7 @@ STATEMENT = [
     [("intelligent systems, and always finding", False)],
     [("something ", False), ("new to learn.", True)],
 ]
-AMBITION = ["Working toward becoming a data analyst fluent in AI,", "analytics and modern data-driven systems."]
+AMBITION = ["Working toward becoming a data scientist fluent in AI,", "analytics and modern data-driven systems."]
 # (label, value or pills, optional aside set in italics beneath)
 PROFILE = [
     ("Studying", "CSE · Data Science track", None),

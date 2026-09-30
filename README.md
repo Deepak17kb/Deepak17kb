@@ -16,24 +16,24 @@
 
 <img src="assets/sections/about.svg" width="100%" alt="01 · About"/>
 
-<img src="assets/about.svg" width="100%" alt="About: Data analysis with AI layered in is where I do my best work, turning messy data into meaningful insights, building intelligent systems, and always finding something new to learn. Working toward becoming a data analyst fluent in AI, analytics and modern data-driven systems. Studying CSE on the Data Science track. Works with Python, SQL, AI and ML, Power BI, and whatever catches my curiosity. Interests: AI, data, psychology, how things work, new ideas. Off the clock: gaming, movies, music, exploring, traveling."/>
+<img src="assets/about.svg" width="100%" alt="About: Data analysis with AI layered in is where I do my best work, turning messy data into meaningful insights, building intelligent systems, and always finding something new to learn. Working toward becoming a data scientist fluent in AI, analytics and modern data-driven systems. Studying CSE on the Data Science track. Works with Python, SQL, AI and ML, Power BI, and whatever catches my curiosity. Interests: AI, data, psychology, how things work, new ideas. Off the clock: gaming, movies, music, exploring, traveling."/>
 
 <br/><br/>
 
 <img src="assets/sections/work.svg" width="100%" alt="02 · Featured work"/>
 
-<a href="https://github.com/Deepak17kb/AgriFlow"><img src="assets/projects/agriflow.svg" width="49%" alt="AgriFlow AI: crop and food-security analytics with a RandomForest outlook"/></a>
-<a href="https://github.com/adityashukla2615/upi-risk-desk"><img src="assets/projects/upi-risk-desk.svg" width="49%" alt="UPI Risk Desk, a team collaboration: fraud-ring detection and merchant risk analytics for UPI payments"/></a>
-<a href="https://github.com/Deepak17kb/NER-SafeRoute"><img src="assets/projects/ner-saferoute.svg" width="49%" alt="NER SafeRoute: hazard-safe, vehicle-aware routing for Northeast India"/></a>
 <a href="https://github.com/Deepak17kb/BroadBridge"><img src="assets/projects/broadbridge.svg" width="49%" alt="BroadBridge: agentic wealth navigator with a shared TypeScript Monte Carlo engine"/></a>
+<a href="https://github.com/Deepak17kb/NER-SafeRoute"><img src="assets/projects/ner-saferoute.svg" width="49%" alt="NER SafeRoute: hazard-safe, vehicle-aware routing for Northeast India"/></a>
+<a href="https://github.com/adityashukla2615/upi-risk-desk"><img src="assets/projects/upi-risk-desk.svg" width="49%" alt="UPI Risk Desk, a team collaboration: fraud-ring detection and merchant risk analytics for UPI payments"/></a>
 <a href="https://github.com/Deepak17kb/KrishiMitra"><img src="assets/projects/krishimitra.svg" width="49%" alt="KrishiMitra: AI farming companion in Hindi and English"/></a>
+<a href="https://github.com/Deepak17kb/AgriFlow"><img src="assets/projects/agriflow.svg" width="49%" alt="AgriFlow AI: crop and food-security analytics with a RandomForest outlook"/></a>
 <a href="https://github.com/Deepak17kb/Automated-Deadlock-Detection-Tool"><img src="assets/projects/deadlock-lab.svg" width="49%" alt="Deadlock Runtime Lab: a runnable resource-allocation graph with deadlock detection"/></a>
 
 <sub>Cards open the repository · live demos:
-<a href="https://agriflowai.streamlit.app">AgriFlow AI</a> ·
-<a href="https://adityashukla2615.github.io/upi-risk-desk/outputs/upi_risk_desk.html?v=2">UPI Risk Desk</a> ·
-<a href="https://ner-safe-route-psi.vercel.app">NER SafeRoute</a> ·
 <a href="https://deepak17kb.github.io/BroadBridge/">BroadBridge</a> ·
+<a href="https://ner-safe-route-psi.vercel.app">NER SafeRoute</a> ·
+<a href="https://adityashukla2615.github.io/upi-risk-desk/outputs/upi_risk_desk.html?v=2">UPI Risk Desk</a> ·
+<a href="https://agriflowai.streamlit.app">AgriFlow AI</a> ·
 <a href="https://deepak17kb.github.io/Automated-Deadlock-Detection-Tool/">Deadlock Runtime Lab</a></sub>
 
 </div>
