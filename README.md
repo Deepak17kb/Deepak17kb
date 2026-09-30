@@ -5,36 +5,36 @@
 
 <div align="center">
 
-<img src="assets/hero.svg" width="100%" alt="Deepak. Data and AI, in the making. Full stack with an intelligence layer. Jalandhar, Punjab."/>
+<img src="assets/hero.svg" width="100%" alt="Deepak. Data and AI, in the making. Turning messy data into insight. Jalandhar, Punjab."/>
 
 <br/>
 
-**CSE student on the data science track, building full-stack products with AI layered in.**<br/>
-<sub>Python · TypeScript · C++ · machine learning · data visualisation · Jalandhar, Punjab</sub>
+**CSE student on the data science track, turning messy data into meaningful insights with AI layered in.**<br/>
+<sub>Python · SQL · machine learning · Power BI · data visualisation · Jalandhar, Punjab</sub>
 
 <br/>
 
 <img src="assets/sections/about.svg" width="100%" alt="01 · About"/>
 
-<img src="assets/about.svg" width="100%" alt="About: Full-stack development with AI layered in is where I do my best work. Always mid-project, always learning something new. Working toward becoming a full-stack engineer fluent in AI-native systems. Based in Jalandhar, Punjab, India; studying CSE on the data science track; currently learning algorithms, data structures, data analysis and Java; away from the screen, strategy games."/>
+<img src="assets/about.svg" width="100%" alt="About: Data analysis with AI layered in is where I do my best work, turning messy data into meaningful insights, building intelligent systems, and always finding something new to learn. Working toward becoming a data analyst fluent in AI, analytics and modern data-driven systems. Studying CSE on the Data Science track. Works with Python, SQL, AI and ML, Power BI, and whatever catches my curiosity. Interests: AI, data, psychology, how things work, new ideas. Off the clock: gaming, movies, music, exploring, traveling."/>
 
 <br/><br/>
 
 <img src="assets/sections/work.svg" width="100%" alt="02 · Featured work"/>
 
-<a href="https://github.com/Deepak17kb/BroadBridge"><img src="assets/projects/broadbridge.svg" width="49%" alt="BroadBridge: agentic wealth navigator with a shared TypeScript Monte Carlo engine"/></a>
-<a href="https://github.com/Deepak17kb/NER-SafeRoute"><img src="assets/projects/ner-saferoute.svg" width="49%" alt="NER SafeRoute: hazard-safe, vehicle-aware routing for Northeast India"/></a>
 <a href="https://github.com/Deepak17kb/AgriFlow"><img src="assets/projects/agriflow.svg" width="49%" alt="AgriFlow AI: crop and food-security analytics with a RandomForest outlook"/></a>
+<a href="https://github.com/adityashukla2615/upi-risk-desk"><img src="assets/projects/upi-risk-desk.svg" width="49%" alt="UPI Risk Desk, a team collaboration: fraud-ring detection and merchant risk analytics for UPI payments"/></a>
+<a href="https://github.com/Deepak17kb/NER-SafeRoute"><img src="assets/projects/ner-saferoute.svg" width="49%" alt="NER SafeRoute: hazard-safe, vehicle-aware routing for Northeast India"/></a>
+<a href="https://github.com/Deepak17kb/BroadBridge"><img src="assets/projects/broadbridge.svg" width="49%" alt="BroadBridge: agentic wealth navigator with a shared TypeScript Monte Carlo engine"/></a>
 <a href="https://github.com/Deepak17kb/KrishiMitra"><img src="assets/projects/krishimitra.svg" width="49%" alt="KrishiMitra: AI farming companion in Hindi and English"/></a>
 <a href="https://github.com/Deepak17kb/Automated-Deadlock-Detection-Tool"><img src="assets/projects/deadlock-lab.svg" width="49%" alt="Deadlock Runtime Lab: a runnable resource-allocation graph with deadlock detection"/></a>
-<a href="https://github.com/adityashukla2615/upi-risk-desk"><img src="assets/projects/upi-risk-desk.svg" width="49%" alt="UPI Risk Desk, a team collaboration: fraud-ring detection and merchant risk analytics for UPI payments"/></a>
 
 <sub>Cards open the repository · live demos:
-<a href="https://deepak17kb.github.io/BroadBridge/">BroadBridge</a> ·
-<a href="https://ner-safe-route-psi.vercel.app">NER SafeRoute</a> ·
 <a href="https://agriflowai.streamlit.app">AgriFlow AI</a> ·
-<a href="https://deepak17kb.github.io/Automated-Deadlock-Detection-Tool/">Deadlock Runtime Lab</a> ·
-<a href="https://adityashukla2615.github.io/upi-risk-desk/outputs/upi_risk_desk.html?v=2">UPI Risk Desk</a></sub>
+<a href="https://adityashukla2615.github.io/upi-risk-desk/outputs/upi_risk_desk.html?v=2">UPI Risk Desk</a> ·
+<a href="https://ner-safe-route-psi.vercel.app">NER SafeRoute</a> ·
+<a href="https://deepak17kb.github.io/BroadBridge/">BroadBridge</a> ·
+<a href="https://deepak17kb.github.io/Automated-Deadlock-Detection-Tool/">Deadlock Runtime Lab</a></sub>
 
 </div>
 
@@ -60,11 +60,11 @@
 
 | | |
 |:--|:--|
-| **Languages** | <img src="https://skillicons.dev/icons?i=py,ts,js,cpp,c,java,html,css&theme=dark" alt="Python, TypeScript, JavaScript, C++, C, Java, HTML, CSS"/> |
-| **Web & APIs** | <img src="https://skillicons.dev/icons?i=react,vite,nodejs,express,fastapi&theme=dark" alt="React, Vite, Node.js, Express, FastAPI"/> |
-| **ML & data** | <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,postgres,sqlite&theme=dark" alt="PyTorch, TensorFlow, scikit-learn, PostgreSQL, SQLite"/><br/><img src="https://img.shields.io/badge/pandas-18181B?style=flat-square&logo=pandas&logoColor=D4B483" alt="pandas"/> <img src="https://img.shields.io/badge/NumPy-18181B?style=flat-square&logo=numpy&logoColor=D4B483" alt="NumPy"/> <img src="https://img.shields.io/badge/Keras-18181B?style=flat-square&logo=keras&logoColor=D4B483" alt="Keras"/> <img src="https://img.shields.io/badge/Gemini%20API-18181B?style=flat-square&logo=googlegemini&logoColor=D4B483" alt="Gemini API"/> |
-| **Visualisation** | <img src="https://img.shields.io/badge/Plotly-18181B?style=flat-square&logo=plotly&logoColor=A1A1AA" alt="Plotly"/> <img src="https://img.shields.io/badge/Streamlit-18181B?style=flat-square&logo=streamlit&logoColor=A1A1AA" alt="Streamlit"/> <img src="https://img.shields.io/badge/Matplotlib-18181B?style=flat-square" alt="Matplotlib"/> <img src="https://img.shields.io/badge/Power%20BI-18181B?style=flat-square" alt="Power BI"/> <img src="https://img.shields.io/badge/Tableau-18181B?style=flat-square" alt="Tableau"/> |
-| **Tooling** | <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,vercel,linux,vscode,postman,figma&theme=dark" alt="Git, GitHub, GitHub Actions, Docker, Vercel, Linux, VS Code, Postman, Figma"/> |
+| **Data & SQL** | <img src="https://skillicons.dev/icons?i=py,postgres,sqlite&theme=dark" alt="Python, PostgreSQL, SQLite"/><br/><img src="https://img.shields.io/badge/pandas-18181B?style=flat-square&logo=pandas&logoColor=D4B483" alt="pandas"/> <img src="https://img.shields.io/badge/NumPy-18181B?style=flat-square&logo=numpy&logoColor=D4B483" alt="NumPy"/> <img src="https://img.shields.io/badge/SQL-18181B?style=flat-square" alt="SQL"/> |
+| **AI & ML** | <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn&theme=dark" alt="PyTorch, TensorFlow, scikit-learn"/><br/><img src="https://img.shields.io/badge/Keras-18181B?style=flat-square&logo=keras&logoColor=D4B483" alt="Keras"/> <img src="https://img.shields.io/badge/Gemini%20API-18181B?style=flat-square&logo=googlegemini&logoColor=D4B483" alt="Gemini API"/> |
+| **BI & visualisation** | <img src="https://img.shields.io/badge/Power%20BI-18181B?style=flat-square" alt="Power BI"/> <img src="https://img.shields.io/badge/Tableau-18181B?style=flat-square" alt="Tableau"/> <img src="https://img.shields.io/badge/Plotly-18181B?style=flat-square&logo=plotly&logoColor=A1A1AA" alt="Plotly"/> <img src="https://img.shields.io/badge/Matplotlib-18181B?style=flat-square" alt="Matplotlib"/> <img src="https://img.shields.io/badge/Streamlit-18181B?style=flat-square&logo=streamlit&logoColor=A1A1AA" alt="Streamlit"/> |
+| **Languages** | <img src="https://skillicons.dev/icons?i=py,java,cpp,c,js,ts,html,css&theme=dark" alt="Python, Java, C++, C, JavaScript, TypeScript, HTML, CSS"/> |
+| **Build & ship** | <img src="https://skillicons.dev/icons?i=react,nodejs,fastapi,docker,git,github,githubactions,vercel,vscode&theme=dark" alt="React, Node.js, FastAPI, Docker, Git, GitHub, GitHub Actions, Vercel, VS Code"/> |
 
 <sub>Foundations: data structures · algorithms · database systems · object-oriented programming · operating systems</sub>
 

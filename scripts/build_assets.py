@@ -24,7 +24,7 @@ ASSETS = Path(__file__).resolve().parent.parent / "assets"
 # ── content ────────────────────────────────────────────────────────────────
 ROLES = [
     "Data & AI, in the making",
-    "Full stack with an intelligence layer",
+    "Turning messy data into insight",
     "Learning fast, building faster",
     "From Punjab, for the world",
 ]
@@ -33,18 +33,20 @@ CHIPS = [("pin", "Jalandhar, Punjab"), ("spark", "Data science track"), ("dot", 
 
 # The statement is set by hand, one line at a time, as (text, highlighted) runs.
 STATEMENT = [
-    [("Full-stack development with ", False), ("AI", True)],
-    [("layered in", True), (" is where I do my", False)],
-    [("best work. Always mid-project,", False)],
-    [("always ", False), ("learning", True), (" something new.", False)],
+    [("Data analysis with ", False), ("AI layered in", True), (" is", False)],
+    [("where I do my best work. Turning messy", False)],
+    [("data into ", False), ("meaningful insights", True), (", building", False)],
+    [("intelligent systems, and always finding", False)],
+    [("something ", False), ("new to learn.", True)],
 ]
-AMBITION = "Working toward becoming a full-stack engineer fluent in AI-native systems."
+AMBITION = ["Working toward becoming a data analyst fluent in AI,", "analytics and modern data-driven systems."]
+# (label, value or pills, optional aside set in italics beneath)
 PROFILE = [
-    ("Based in", "Jalandhar, Punjab, India"),
-    ("Studying", "CSE, on the data science track"),
-    ("Currently learning", ["Algorithms", "Data structures", "Data analysis", "Java"]),
-    ("Interests", "AI · automation · voice tech · open source · cloud"),
-    ("Away from the screen", "Strategy games"),
+    ("Studying", "CSE · Data Science track", None),
+    ("Works with", ["Python", "SQL", "AI / ML", "Power BI"], "…and whatever catches my curiosity"),
+    ("Interests", "AI · data · psychology · how things work · new ideas", None),
+    ("Drawn to", "automation · systems · things that shouldn't work but do", None),
+    ("Off the clock", "Gaming · movies · music · exploring · traveling", "…and pretending I'll sleep early"),
 ]
 
 SECTIONS = [
@@ -260,12 +262,12 @@ def hero() -> str:
 
     out.append(mono(44, 46, "~/deepak17kb", 11, MUTED) + mono(1156, 46, "31.33°N · 75.58°E", 11, MUTED, anchor="end"))
     out.append("</g>" + border)
-    return document(W, H, "".join(out), label="Deepak: Data & AI, full stack. Jalandhar, Punjab.", css=css, defs=defs)
+    return document(W, H, "".join(out), label="Deepak: Data & AI, turning messy data into insight. Jalandhar, Punjab.", css=css, defs=defs)
 
 
 # ── about ──────────────────────────────────────────────────────────────────
 def about_card() -> str:
-    W, H = 1200, 430
+    W, H = 1200, 460
     defs, back, border = frame(W, H, 22, "about")
     css = RISE + (
         ".breathe{animation:breathe 9s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}"
@@ -276,25 +278,26 @@ def about_card() -> str:
              f' stop-opacity=".09"/><stop offset="1" stop-color="{SAND}" stop-opacity="0"/></radialGradient>')
     out = [back, '<g clip-path="url(#about-clip)">',
            f'<rect width="{W}" height="{H}" fill="url(#about-glow)" class="breathe"/>',
-           f'<text x="50" y="143" font-family="{SERIF}" font-size="150" fill="{SAND}" fill-opacity=".16"'
+           f'<text x="52" y="136" font-family="{SERIF}" font-size="130" fill="{SAND}" fill-opacity=".16"'
            ' class="rise">“</text>']
 
-    # Left: the statement, in the serif, with a few words picked out.
+    # Left: the statement, in the serif, with a few phrases picked out.
     for i, runs in enumerate(STATEMENT):
         spans = "".join(f'<tspan fill="{SAND}" font-style="italic">{esc(t)}</tspan>' if lit else esc(t)
                         for t, lit in runs)
-        out.append(f'<g class="rise" style="animation-delay:{num(0.2 + i * 0.16)}s">'
-                   f'<text x="72" y="{132 + i * 46}" font-family="{SERIF}" font-size="33" fill="{TEXT}"'
+        out.append(f'<g class="rise" style="animation-delay:{num(0.2 + i * 0.14)}s">'
+                   f'<text x="72" y="{128 + i * 40}" font-family="{SERIF}" font-size="28" fill="{TEXT}"'
                    f' xml:space="preserve">{spans}</text></g>')
-    out.append(f'<g class="rise" style="animation-delay:.95s">{sans(72, 318, AMBITION, 15.5, SUB)}</g>')
-    out.append(f'<g class="rise" style="animation-delay:1.3s"><text x="72" y="376" font-family="{SERIF}" font-size="24"'
+    for i, line in enumerate(AMBITION):
+        out.append(f'<g class="rise" style="animation-delay:{num(1 + i * 0.1)}s">{sans(72, 336 + i * 23, line, 15, SUB)}</g>')
+    out.append(f'<g class="rise" style="animation-delay:1.35s"><text x="72" y="412" font-family="{SERIF}" font-size="22"'
                f' font-style="italic" fill="{SAND}">— Deepak</text></g>')
 
     # Right: a short profile sheet, separated by hairlines.
-    out.append(f'<path d="M700,70V372" pathLength="1" class="rule" stroke="{LINE}" style="animation-delay:.3s"/>')
-    rx, ry, step = 740, 74, 66
-    for i, (label, value) in enumerate(PROFILE):
-        y, delay = ry + i * step, 0.4 + i * 0.12
+    out.append(f'<path d="M712,70V{H - 70}" pathLength="1" class="rule" stroke="{LINE}" style="animation-delay:.3s"/>')
+    rx, y = 748, 72
+    for i, (label, value, aside) in enumerate(PROFILE):
+        delay = 0.4 + i * 0.12
         row = [mono(rx, y, label.upper(), 10.5, MUTED, track=1.6)]
         if isinstance(value, list):
             x = rx
@@ -304,16 +307,24 @@ def about_card() -> str:
                            f'<rect x="{num(x)}" y="{y + 10}" width="{num(w)}" height="24" rx="12" fill="{INSET}"'
                            f' stroke="{LINE}"/>{mono(x + 10, y + 26, item, 11, TEXT)}</g>')
                 x += w + 8
+            bottom = y + 34
         else:
-            row.append(sans(rx, y + 27, value, 16, TEXT, weight=500))
+            row.append(sans(rx, y + 26, value, 15, TEXT, weight=500))
+            bottom = y + 30
+        if aside:
+            row.append(f'<text x="{rx}" y="{bottom + 20}" font-family="{SERIF}" font-size="15" font-style="italic"'
+                       f' fill="{SUB}">{esc(aside)}</text>')
+            bottom += 24
         out.append(f'<g class="rise" style="animation-delay:{num(delay)}s">{"".join(row)}</g>')
         if i < len(PROFILE) - 1:
-            out.append(f'<path d="M{rx},{y + 45}H{W - 64}" pathLength="1" class="rule" stroke="{LINE}"'
+            out.append(f'<path d="M{rx},{bottom + 14}H{W - 64}" pathLength="1" class="rule" stroke="{LINE}"'
                        f' style="animation-delay:{num(delay + 0.1)}s"/>')
+            y = bottom + 38
 
     out.append("</g>" + border)
-    label = (f"About: {' '.join(t for runs in STATEMENT for t, _ in runs)} {AMBITION} "
-             + "; ".join(f"{k}: {', '.join(v) if isinstance(v, list) else v}" for k, v in PROFILE) + ".")
+    statement = " ".join(t for runs in STATEMENT for t, _ in runs).replace("  ", " ")
+    facts = "; ".join(f"{k}: {', '.join(v) if isinstance(v, list) else v}{' ' + a if a else ''}" for k, v, a in PROFILE)
+    label = f"About: {statement} {' '.join(AMBITION)} {facts}."
     return document(W, H, "".join(out), label=label, css=css, defs=defs)
 
 
