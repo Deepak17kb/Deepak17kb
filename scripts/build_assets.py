@@ -33,13 +33,13 @@ CHIPS = [("pin", "Jalandhar, Punjab"), ("spark", "Data science track"), ("dot", 
 
 # The statement is set by hand, one line at a time, as (text, highlighted) runs.
 STATEMENT = [
-    [("Data analysis with ", False), ("AI layered in", True), (" is", False)],
-    [("where I do my best work. Turning messy", False)],
-    [("data into ", False), ("meaningful insights", True), (", building", False)],
-    [("intelligent systems, and always finding", False)],
-    [("something ", False), ("new to learn.", True)],
+    [("Data science with ", False), ("AI layered in", True), (" is where I", False)],
+    [("spend most of my time. I like ", False), ("messy problems", True), (",", False)],
+    [("interesting patterns, and the feeling of", False)],
+    [("finally figuring something out", True), (" after", False)],
+    [("staring at it for way too long.", False)],
 ]
-AMBITION = ["Working toward becoming a data scientist fluent in AI,", "analytics and modern data-driven systems."]
+CLOSING = "There’s always something new to figure out."
 # (label, value or pills, optional aside set in italics beneath)
 PROFILE = [
     ("Studying", "CSE · Data Science track", None),
@@ -286,11 +286,11 @@ def about_card() -> str:
         spans = "".join(f'<tspan fill="{SAND}" font-style="italic">{esc(t)}</tspan>' if lit else esc(t)
                         for t, lit in runs)
         out.append(f'<g class="rise" style="animation-delay:{num(0.2 + i * 0.14)}s">'
-                   f'<text x="72" y="{128 + i * 40}" font-family="{SERIF}" font-size="28" fill="{TEXT}"'
+                   f'<text x="72" y="{128 + i * 40}" font-family="{SERIF}" font-size="27" fill="{TEXT}"'
                    f' xml:space="preserve">{spans}</text></g>')
-    for i, line in enumerate(AMBITION):
-        out.append(f'<g class="rise" style="animation-delay:{num(1 + i * 0.1)}s">{sans(72, 336 + i * 23, line, 15, SUB)}</g>')
-    out.append(f'<g class="rise" style="animation-delay:1.35s"><text x="72" y="412" font-family="{SERIF}" font-size="22"'
+    out.append(f'<g class="rise" style="animation-delay:1.05s"><text x="72" y="352" font-family="{SERIF}" font-size="20"'
+               f' font-style="italic" fill="{SUB}">{esc(CLOSING)}</text></g>')
+    out.append(f'<g class="rise" style="animation-delay:1.35s"><text x="72" y="410" font-family="{SERIF}" font-size="22"'
                f' font-style="italic" fill="{SAND}">— Deepak</text></g>')
 
     # Right: a short profile sheet, separated by hairlines.
@@ -324,7 +324,7 @@ def about_card() -> str:
     out.append("</g>" + border)
     statement = " ".join(t for runs in STATEMENT for t, _ in runs).replace("  ", " ")
     facts = "; ".join(f"{k}: {', '.join(v) if isinstance(v, list) else v}{' ' + a if a else ''}" for k, v, a in PROFILE)
-    label = f"About: {statement} {' '.join(AMBITION)} {facts}."
+    label = f"About: {statement} {CLOSING} {facts}."
     return document(W, H, "".join(out), label=label, css=css, defs=defs)
 
 

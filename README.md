@@ -16,7 +16,7 @@
 
 <img src="assets/sections/about.svg" width="100%" alt="01 · About"/>
 
-<img src="assets/about.svg" width="100%" alt="About: Data analysis with AI layered in is where I do my best work, turning messy data into meaningful insights, building intelligent systems, and always finding something new to learn. Working toward becoming a data scientist fluent in AI, analytics and modern data-driven systems. Studying CSE on the Data Science track. Works with Python, SQL, AI and ML, Power BI, and whatever catches my curiosity. Interests: AI, data, psychology, how things work, new ideas. Off the clock: gaming, movies, music, exploring, traveling."/>
+<img src="assets/about.svg" width="100%" alt="About: Data science with AI layered in is where I spend most of my time. I like messy problems, interesting patterns, and the feeling of finally figuring something out after staring at it for way too long. There’s always something new to figure out. Studying CSE on the Data Science track. Works with Python, SQL, AI and ML, Power BI, and whatever catches my curiosity. Interests: AI, data, psychology, how things work, new ideas. Off the clock: gaming, movies, music, exploring, traveling."/>
 
 <br/><br/>
 
