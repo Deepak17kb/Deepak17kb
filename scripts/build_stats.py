@@ -18,14 +18,14 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from theme import (
-    AMBER, BLUE, CYAN, LINE, MINT, MUTED, PINK, SANS, SUB, TEXT, VIOLET,
+    CLAY, LILAC, LINE, MUTED, ROSE, SAGE, SAND, SANS, SLATE, STONE, SUB, TEXT,
     document, esc, frame, mono, num, sans,
 )
 
 API = "https://api.github.com/graphql"
 # Notebook JSON (outputs, embedded images) dwarfs the code around it.
 EXCLUDED_LANGUAGES = {"Jupyter Notebook"}
-LANGUAGE_COLORS = (CYAN, VIOLET, MINT, BLUE, PINK, AMBER, "#E6E6F0", MUTED)
+LANGUAGE_COLORS = (SAND, SLATE, SAGE, CLAY, LILAC, ROSE, STONE, MUTED)
 MIN_SHARE = 0.01
 
 PROFILE = """
@@ -141,7 +141,7 @@ def odometer(x: float, baseline: float, value: int, size: float, uid: str) -> st
     for i, ch in enumerate(text):
         if not ch.isdigit():
             out.append(f'<text x="{num(col_x + cw * 0.25)}" y="{num(baseline)}" font-family="{SANS}" font-size="{num(size)}"'
-                       f' font-weight="800" fill="{TEXT}" text-anchor="middle">{esc(ch)}</text>')
+                       f' font-weight="600" fill="{TEXT}" text-anchor="middle">{esc(ch)}</text>')
             col_x += cw * 0.5
             continue
         shift = -(10 + int(ch)) * lh
@@ -154,7 +154,7 @@ def odometer(x: float, baseline: float, value: int, size: float, uid: str) -> st
             f'<clipPath id="{uid}-{i}"><rect x="{num(col_x)}" y="{num(baseline - size)}" width="{num(cw)}"'
             f' height="{num(size * 1.2)}"/></clipPath>'
             f'<g clip-path="url(#{uid}-{i})"><g transform="translate(0 {num(shift)})" font-family="{SANS}"'
-            f' font-size="{num(size)}" font-weight="800" fill="{TEXT}">{strip}'
+            f' font-size="{num(size)}" font-weight="600" fill="{TEXT}">{strip}'
             f'<animateTransform attributeName="transform" type="translate" dur="{num(delay + 1.6)}s"'
             f' values="0 0;0 0;0 {num(shift)}" keyTimes="0;{delay / (delay + 1.6):.4f};1" calcMode="spline"'
             f' keySplines="0 0 1 1;.2 .75 .15 1" fill="freeze"/></g></g>'
@@ -165,11 +165,11 @@ def odometer(x: float, baseline: float, value: int, size: float, uid: str) -> st
 
 def activity_card(s: dict, login: str) -> str:
     W, H = 480, 280
-    defs, back, border = frame(W, H, 20, "act", accents=(CYAN, VIOLET), period=12)
-    defs += (f'<linearGradient id="spark" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="{CYAN}"/>'
-             f'<stop offset="1" stop-color="{VIOLET}"/></linearGradient>')
+    defs, back, border = frame(W, H, 18, "act")
+    defs += (f'<linearGradient id="spark" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="{SAND}"'
+             f' stop-opacity=".45"/><stop offset="1" stop-color="{SAND}"/></linearGradient>')
     out = [back, '<g clip-path="url(#act-clip)">',
-           mono(24, 36, f"GITHUB · @{login.upper()}", 11, CYAN),
+           mono(24, 36, f"GITHUB · @{login.upper()}", 11, SAND),
            mono(W - 24, 36, f"updated {s['updated']:%d %b %Y}", 10, MUTED, anchor="end"),
            odometer(24, 98, s["total"], 46, "odo"),
            mono(24, 122, f"contributions since {s['joined']:%b %Y}", 10.5, SUB)]
@@ -181,25 +181,25 @@ def activity_card(s: dict, login: str) -> str:
     for i, count in enumerate(s["weekly"]):
         h = max(2.0, (bottom - top) * count / peak)
         out.append(f'<rect x="{num(left + i * step)}" y="{num(bottom - h)}" width="{num(step * 0.62)}" height="{num(h)}"'
-                   f' rx="1.5" fill="url(#spark)" fill-opacity="{0.35 if count == 0 else 0.9}" class="grow"'
+                   f' rx="1.5" fill="{LINE if count == 0 else 'url(#spark)'}" class="grow"'
                    f' style="animation-delay:{num(0.3 + i * 0.03)}s"/>')
     out.append(mono(W - 24, 126, "last 26 weeks", 9, MUTED, anchor="end"))
     out.append(f'<path d="M24,146H{W - 24}" stroke="{LINE}"/>')
 
     metrics = [
-        (s["commits"], "commits", "12 mo", CYAN),
-        (s["active"], "active days", "12 mo", MINT),
-        (s["longest"], "longest streak", "days", VIOLET),
-        (s["repos"], "repositories", "public", PINK),
-        (len(s["languages"]), "languages", "in use", BLUE),
-        (s["stars"], "stars", "earned", AMBER),
+        (s["commits"], "commits", "12 mo", SAND),
+        (s["active"], "active days", "12 mo", SAGE),
+        (s["longest"], "longest streak", "days", SLATE),
+        (s["repos"], "repositories", "public", CLAY),
+        (len(s["languages"]), "languages", "in use", LILAC),
+        (s["stars"], "stars", "earned", ROSE),
     ]
     for i, (value, label, note, color) in enumerate(metrics):
         x, y = 24 + (i % 3) * 148, 186 + (i // 3) * 58
         out.append(
             f'<g class="rise" style="animation-delay:{num(0.5 + i * 0.1)}s">'
             f'<rect x="{x}" y="{y - 22}" width="3" height="38" rx="1.5" fill="{color}"/>'
-            + sans(x + 14, y, f"{value:,}", 24, TEXT, weight=700)
+            + sans(x + 14, y, f"{value:,}", 24, TEXT, weight=600)
             + mono(x + 14, y + 16, f"{label} · {note}", 9.5, MUTED) + "</g>"
         )
     out.append("</g>" + border)
@@ -212,7 +212,7 @@ def activity_card(s: dict, login: str) -> str:
 
 def languages_card(s: dict) -> str:
     W, H = 480, 280
-    defs, back, border = frame(W, H, 20, "lang", accents=(VIOLET, CYAN), period=12)
+    defs, back, border = frame(W, H, 18, "lang")
     ranked = s["languages"].most_common()
     total = sum(size for _, size in ranked) or 1
     # Languages under 1% are noise at this size; they fold into "Other" when that adds up to something.
@@ -227,7 +227,7 @@ def languages_card(s: dict) -> str:
              f'<animate attributeName="width" values="0;{bar_w}" dur="1.4s" calcMode="spline"'
              ' keySplines=".3 .7 .2 1" fill="freeze"/></rect></clipPath>')
     out = [back, '<g clip-path="url(#lang-clip)">',
-           mono(24, 36, "LANGUAGES · BY BYTES", 11, VIOLET),
+           mono(24, 36, "LANGUAGES · BY BYTES", 11, SAND),
            mono(W - 24, 36, "public repos · excl. notebooks", 10, MUTED, anchor="end"),
            f'<rect x="24" y="56" width="{bar_w}" height="12" rx="6" fill="{LINE}"/>',
            '<g clip-path="url(#stack)">']

@@ -11,32 +11,31 @@ from __future__ import annotations
 
 from xml.sax.saxutils import escape
 
-# ── palette ────────────────────────────────────────────────────────────────
-PANEL = "#0A0A13"
-INSET = "#0E0E1A"
-LINE = "#1E1E30"
-TEXT = "#ECECF4"
-SUB = "#A9A9C2"
-MUTED = "#6A6A80"
+# ── palette: charcoal and off-white, with muted, earthy accents ────────────
+PANEL = "#111113"
+INSET = "#18181B"
+LINE = "#27272A"
+TEXT = "#EDEDEF"
+SUB = "#A1A1AA"
+MUTED = "#71717A"
 
-CYAN = "#00FFF2"
-BLUE = "#7AA2FF"
-VIOLET = "#B199FF"
-MINT = "#5CF2B0"
-PINK = "#FF7AC6"
-AMBER = "#FFC069"
-RED = "#FF4D6D"
+SAND = "#D4B483"  # the primary accent
+SLATE = "#8EA4C2"
+SAGE = "#9CB89A"
+CLAY = "#CF8E7C"
+LILAC = "#A9A1C8"
+ROSE = "#C99BA8"
+STONE = "#B8B2A7"
+GREEN = "#8DBF8B"
+RED = "#D97A6C"
 
 SANS = "'Segoe UI',-apple-system,BlinkMacSystemFont,Inter,'Helvetica Neue',Arial,sans-serif"
+SERIF = "Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Times New Roman',serif"
 MONO = "'JetBrains Mono','Cascadia Code','Fira Code',Consolas,'SF Mono',Menlo,monospace"
 MONO_W = 0.6  # advance of one monospace glyph, in em
 
 BASE_CSS = (
     "text{font-kerning:normal}"
-    ".comet{fill:none;stroke-width:1.6;stroke-linecap:round;stroke-dasharray:90 910;"
-    "animation:comet 10s linear infinite}"
-    ".halo{stroke-width:7;opacity:.22}"
-    "@keyframes comet{from{stroke-dashoffset:0}to{stroke-dashoffset:-1000}}"
     "@media (prefers-reduced-motion:reduce){*{animation:none!important}}"
 )
 
@@ -75,33 +74,22 @@ def sans(x, y, text, size, fill, *, weight=400, anchor="start", cls=None, attrs=
     )
 
 
-def rounded_path(x, y, w, h, r):
-    """A rounded rectangle as a path, so pathLength works in every browser."""
-    return (
-        f"M{num(x + r)},{num(y)}H{num(x + w - r)}A{num(r)},{num(r)} 0 0 1 {num(x + w)},{num(y + r)}"
-        f"V{num(y + h - r)}A{num(r)},{num(r)} 0 0 1 {num(x + w - r)},{num(y + h)}"
-        f"H{num(x + r)}A{num(r)},{num(r)} 0 0 1 {num(x)},{num(y + h - r)}"
-        f"V{num(y + r)}A{num(r)},{num(r)} 0 0 1 {num(x + r)},{num(y)}Z"
-    )
-
-
-def frame(w, h, r, uid, accents=(CYAN, VIOLET), period=10.0, fill=PANEL):
-    """Panel background, hairline border and light 'comets' orbiting the edge.
+def frame(w, h, r, uid, fill=PANEL):
+    """Panel background, hairline border and a faint highlight along the top edge.
 
     Returns (defs, background, border); draw the border last so it sits on top.
     """
-    d = rounded_path(0.75, 0.75, w - 1.5, h - 1.5, r)
-    comets = []
-    for i, color in enumerate(accents):
-        delay = -period * i / len(accents)
-        style = f"animation-duration:{num(period)}s;animation-delay:{num(delay)}s"
-        comets.append(
-            f'<path d="{d}" pathLength="1000" class="comet halo" stroke="{color}" style="{style}"/>'
-            f'<path d="{d}" pathLength="1000" class="comet" stroke="{color}" style="{style}"/>'
-        )
-    defs = f'<clipPath id="{uid}-clip"><rect width="{w}" height="{h}" rx="{r}"/></clipPath>'
+    defs = (
+        f'<clipPath id="{uid}-clip"><rect width="{w}" height="{h}" rx="{r}"/></clipPath>'
+        f'<linearGradient id="{uid}-edge"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+        '<stop offset=".5" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>'
+        "</linearGradient>"
+    )
     background = f'<rect width="{w}" height="{h}" rx="{r}" fill="{fill}"/>'
-    border = f'<path d="{d}" fill="none" stroke="{LINE}" stroke-width="1.5"/>' + "".join(comets)
+    border = (
+        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="{r - 0.5}" fill="none" stroke="{LINE}"/>'
+        f'<rect x="{r}" y=".5" width="{w - 2 * r}" height="1" fill="url(#{uid}-edge)"/>'
+    )
     return defs, background, border
 
 

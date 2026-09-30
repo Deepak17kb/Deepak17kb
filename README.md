@@ -9,14 +9,14 @@
 
 <br/>
 
-**Second-year CSE student on the data science track, building full-stack products with AI layered in.**<br/>
+**CSE student on the data science track, building full-stack products with AI layered in.**<br/>
 <sub>Python · TypeScript · C++ · machine learning · data visualisation · Jalandhar, Punjab</sub>
 
 <br/>
 
 <img src="assets/sections/about.svg" width="100%" alt="01 · About"/>
 
-<img src="assets/about.svg" width="100%" alt="Terminal session. whoami: Deepak, CSE undergrad in second year on the data science track. Focus: full-stack development with AI layered in; always mid-project; goal: a full-stack engineer fluent in AI-native systems. Learning: design and analysis of algorithms, data structures, data analysis, Java. Interests: AI, automation, voice tech, ML apps, open source, cloud, UI. Offline: strategy games."/>
+<img src="assets/about.svg" width="100%" alt="Terminal session. whoami: Deepak, CSE undergraduate on the data science track. Focus: full-stack development with AI layered in; always mid-project; goal: a full-stack engineer fluent in AI-native systems. Learning: design and analysis of algorithms, data structures, data analysis, Java. Interests: AI, automation, voice tech, ML apps, open source, cloud, UI. Offline: strategy games."/>
 
 <br/><br/>
 
@@ -60,8 +60,8 @@
 |:--|:--|
 | **Languages** | <img src="https://skillicons.dev/icons?i=py,ts,js,cpp,c,java,html,css&theme=dark" alt="Python, TypeScript, JavaScript, C++, C, Java, HTML, CSS"/> |
 | **Web & APIs** | <img src="https://skillicons.dev/icons?i=react,vite,nodejs,express,fastapi&theme=dark" alt="React, Vite, Node.js, Express, FastAPI"/> |
-| **ML & data** | <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,postgres,sqlite&theme=dark" alt="PyTorch, TensorFlow, scikit-learn, PostgreSQL, SQLite"/><br/><img src="https://img.shields.io/badge/pandas-0A0A13?style=flat-square&logo=pandas&logoColor=00FFF2" alt="pandas"/> <img src="https://img.shields.io/badge/NumPy-0A0A13?style=flat-square&logo=numpy&logoColor=00FFF2" alt="NumPy"/> <img src="https://img.shields.io/badge/Keras-0A0A13?style=flat-square&logo=keras&logoColor=00FFF2" alt="Keras"/> <img src="https://img.shields.io/badge/Gemini%20API-0A0A13?style=flat-square&logo=googlegemini&logoColor=00FFF2" alt="Gemini API"/> |
-| **Visualisation** | <img src="https://img.shields.io/badge/Plotly-0A0A13?style=flat-square&logo=plotly&logoColor=B199FF" alt="Plotly"/> <img src="https://img.shields.io/badge/Streamlit-0A0A13?style=flat-square&logo=streamlit&logoColor=B199FF" alt="Streamlit"/> <img src="https://img.shields.io/badge/Matplotlib-0A0A13?style=flat-square" alt="Matplotlib"/> <img src="https://img.shields.io/badge/Power%20BI-0A0A13?style=flat-square" alt="Power BI"/> <img src="https://img.shields.io/badge/Tableau-0A0A13?style=flat-square" alt="Tableau"/> |
+| **ML & data** | <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,postgres,sqlite&theme=dark" alt="PyTorch, TensorFlow, scikit-learn, PostgreSQL, SQLite"/><br/><img src="https://img.shields.io/badge/pandas-18181B?style=flat-square&logo=pandas&logoColor=D4B483" alt="pandas"/> <img src="https://img.shields.io/badge/NumPy-18181B?style=flat-square&logo=numpy&logoColor=D4B483" alt="NumPy"/> <img src="https://img.shields.io/badge/Keras-18181B?style=flat-square&logo=keras&logoColor=D4B483" alt="Keras"/> <img src="https://img.shields.io/badge/Gemini%20API-18181B?style=flat-square&logo=googlegemini&logoColor=D4B483" alt="Gemini API"/> |
+| **Visualisation** | <img src="https://img.shields.io/badge/Plotly-18181B?style=flat-square&logo=plotly&logoColor=A1A1AA" alt="Plotly"/> <img src="https://img.shields.io/badge/Streamlit-18181B?style=flat-square&logo=streamlit&logoColor=A1A1AA" alt="Streamlit"/> <img src="https://img.shields.io/badge/Matplotlib-18181B?style=flat-square" alt="Matplotlib"/> <img src="https://img.shields.io/badge/Power%20BI-18181B?style=flat-square" alt="Power BI"/> <img src="https://img.shields.io/badge/Tableau-18181B?style=flat-square" alt="Tableau"/> |
 | **Tooling** | <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,vercel,linux,vscode,postman,figma&theme=dark" alt="Git, GitHub, GitHub Actions, Docker, Vercel, Linux, VS Code, Postman, Figma"/> |
 
 <sub>Foundations: data structures · algorithms · database systems · object-oriented programming · operating systems</sub>
@@ -90,6 +90,6 @@
 
 <img src="assets/footer.svg" width="100%" alt="I am the one who codes. Still building, still learning. Punjab to the world, one commit at a time."/>
 
-<img src="https://komarev.com/ghpvc/?username=Deepak17kb&label=profile%20views&color=0A0A13&style=flat-square" alt="Profile views"/>
+<img src="https://komarev.com/ghpvc/?username=Deepak17kb&label=profile%20views&color=3F3F46&style=flat-square" alt="Profile views"/>
 
 </div>
